@@ -4,8 +4,36 @@ import java.util.Map;
 
 public class TennisGame {
 
+    private static final String DEFAULT_PLAYER_ONE_NAME = "player1";
+    private static final String DEFAULT_PLAYER_TWO_NAME = "player2";
+    private static final String UNKNOWN_PLAYER_MESSAGE = "Unknown player: ";
+
+    private final String player1Name;
+    private final String player2Name;
+
     int player1Score;
     int player2Score;
+
+    public TennisGame() {
+        this(DEFAULT_PLAYER_ONE_NAME, DEFAULT_PLAYER_TWO_NAME);
+    }
+
+    public TennisGame(String player1Name, String player2Name) {
+        this.player1Name = player1Name;
+        this.player2Name = player2Name;
+    }
+
+    public void wonPoint(String playerName) {
+        if (player1Name.equals(playerName)) {
+            player1Scores();
+            return;
+        }
+        if (player2Name.equals(playerName)) {
+            player2Scores();
+            return;
+        }
+        throw new IllegalArgumentException(UNKNOWN_PLAYER_MESSAGE + playerName);
+    }
 
     Map<Integer, String> scoring = Map.of(
             0,"love",
