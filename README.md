@@ -104,6 +104,8 @@ La nota máxima es 10 y para aprobar hace falta un 5.
 
 ## Material de referencia del taller
 
+Tenéis las diapositivas subidas en la raíz de este proyecto ;)
+
 | Tema | Diapositivas |
 |---|---|
 | Tipos de pruebas (unitarias, integración…) | 18 |
